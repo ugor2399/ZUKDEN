@@ -3,43 +3,242 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Страница обо мне</title>
-  <!-- Стили подключаются автоматически из файла style.css -->
+  <title>Жуков Данила | Профиль</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* Дополнительные стили специально для профиля */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    /* Контейнер для карточки профиля */
+    .profile-card {
+      max-width: 600px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+      animation: fadeIn 0.8s ease-out;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Шапка с градиентом */
+    .profile-header {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .profile-header a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      padding: 10px 20px;
+      border-radius: 25px;
+      transition: all 0.3s;
+    }
+
+    .profile-header a:first-child {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .profile-header a:last-child {
+      background: rgba(255,255,255,0.2);
+      margin-left: 20px;
+    }
+
+    .profile-header a:last-child:hover {
+      background: rgba(255,255,255,0.3);
+      transform: scale(1.05);
+    }
+
+    /* Фото */
+    .photo-container {
+      text-align: center;
+      margin-top: -60px;
+      margin-bottom: 20px;
+    }
+
+    .photo-container img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 5px solid white;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      object-fit: cover;
+      background: white;
+      transition: transform 0.3s;
+    }
+
+    .photo-container img:hover {
+      transform: scale(1.05);
+    }
+
+    /* Содержимое профиля */
+    .profile-content {
+      padding: 20px 40px 40px;
+    }
+
+    .profile-content h1 {
+      text-align: center;
+      color: #333;
+      font-size: 28px;
+      margin-bottom: 20px;
+      border-bottom: 3px solid #667eea;
+      display: inline-block;
+      width: auto;
+      margin-left: auto;
+      margin-right: auto;
+      display: block;
+      width: fit-content;
+      padding-bottom: 8px;
+    }
+
+    .about-me {
+      background: #f8f9fa;
+      padding: 20px;
+      border-radius: 15px;
+      margin: 20px 0;
+      border-left: 5px solid #667eea;
+    }
+
+    .about-me p {
+      color: #555;
+      line-height: 1.6;
+      font-size: 16px;
+    }
+
+    /* Увлечения */
+    .hobbies {
+      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      padding: 20px;
+      border-radius: 15px;
+      margin-top: 20px;
+    }
+
+    .hobbies h2 {
+      color: #333;
+      margin-bottom: 15px;
+      font-size: 22px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .hobbies h2::before {
+      content: "⭐";
+      font-size: 24px;
+    }
+
+    .hobbies ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .hobbies li {
+      background: white;
+      padding: 10px 20px;
+      border-radius: 25px;
+      color: #667eea;
+      font-weight: 500;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      transition: all 0.3s;
+    }
+
+    .hobbies li:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(102,126,234,0.3);
+      background: #667eea;
+      color: white;
+    }
+
+    /* Подвал */
+    .footer {
+      text-align: center;
+      padding: 20px;
+      background: #f8f9fa;
+      color: #888;
+      font-size: 14px;
+    }
+
+    /* Адаптивность */
+    @media (max-width: 600px) {
+      .profile-content {
+        padding: 20px;
+      }
+      
+      .hobbies ul {
+        flex-direction: column;
+      }
+      
+      .profile-header a:first-child {
+        font-size: 18px;
+      }
+      
+      .profile-header a:last-child {
+        font-size: 14px;
+      }
+    }
+  </style>
 </head>
 <body>
 
-<header>
-  <!-- ВАШЕ ИМЯ И ФАМИЛИЯ -->
-  <a href="#">Жуков Данила</a>
-  <!-- Ссылка на главную страницу (index.html) -->
-  <a href="index.html">Назад</a>
-</header>
-
-<section class="profile">
-  <!-- ВАША ФОТОГРАФИЯ: фото с именем myfoto.jpg в папке photo -->
-  <img src="myfoto.jpg" alt="Моё фото">
-
-  <!-- ВАШЕ ИМЯ -->
-  <h1>Жуков Данила</h1>
-
-  <!-- РАССКАЗ О СЕБЕ -->
-  <p><strong>О себе:</strong> Привет! Меня зовут Данила. Я студент, учусь на программиста. Люблю сбивать сосульки.</p>
-
-
-  <div class="hobbies">
-    <h2>Мои увлечения</h2>
-    <!-- ВАШИ УВЛЕЧЕНИЯ -->
-    <ul>
-      <li>Программирование</li>
-      <li>Компьютерные игры</li>
-      <li>Настольный теннис</li>
-    </ul>
+<div class="profile-card">
+  <div class="profile-header">
+    <a href="#">Жуков Данила</a>
+    <a href="index.html">← На главную</a>
   </div>
-</section>
 
-<footer>
-</footer>
+  <div class="photo-container">
+    <img src="myfoto.jpg" alt="Моё фото">
+  </div>
+
+  <div class="profile-content">
+    <h1>Жуков Данила</h1>
+
+    <div class="about-me">
+      <p><strong>✨ О себе:</strong> Привет! Меня зовут Данила. Я студент, учусь на программиста. Люблю сбивать сосульки ❄️ и создавать красивые веб-страницы. В свободное время изучаю новые технологии и развиваюсь в IT.</p>
+    </div>
+
+    <div class="hobbies">
+      <h2>Мои увлечения</h2>
+      <ul>
+        <li>💻 Программирование</li>
+        <li>🎮 Компьютерные игры</li>
+        <li>🏓 Настольный теннис</li>
+        <li>📚 Чтение книг</li>
+        <li>🎵 Музыка</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>© 2026 Жуков Данила | Мой первый красивый профиль</p>
+  </div>
+</div>
 
 </body>
 </html>
