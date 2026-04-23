@@ -4,9 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Жуков Данила | Профиль</title>
-  <link rel="stylesheet" href="style.css">
   <style>
-    /* Дополнительные стили специально для профиля */
     * {
       margin: 0;
       padding: 0;
@@ -15,20 +13,21 @@
 
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      background: #0a0a0a;
       min-height: 100vh;
-      padding: 20px;
+      padding: 40px 20px;
     }
 
     /* Контейнер для карточки профиля */
     .profile-card {
-      max-width: 600px;
+      max-width: 650px;
       margin: 0 auto;
-      background: white;
-      border-radius: 20px;
+      background: #111;
+      border-radius: 30px;
       overflow: hidden;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+      box-shadow: 0 25px 50px rgba(0,0,0,0.5);
       animation: fadeIn 0.8s ease-out;
+      border: 1px solid #222;
     }
 
     @keyframes fadeIn {
@@ -42,113 +41,118 @@
       }
     }
 
-    /* Шапка с градиентом */
+    /* Шапка */
     .profile-header {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      padding: 40px 20px;
-      text-align: center;
+      background: #0a0a0a;
+      padding: 25px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #222;
+      flex-wrap: wrap;
+      gap: 15px;
     }
 
     .profile-header a {
-      color: white;
+      color: #888;
       text-decoration: none;
-      font-size: 18px;
-      padding: 10px 20px;
-      border-radius: 25px;
+      font-size: 16px;
       transition: all 0.3s;
     }
 
     .profile-header a:first-child {
-      font-size: 24px;
+      font-size: 22px;
       font-weight: bold;
+      color: #fff;
+      letter-spacing: 1px;
+    }
+
+    .profile-header a:first-child:hover {
+      color: #6c63ff;
     }
 
     .profile-header a:last-child {
-      background: rgba(255,255,255,0.2);
-      margin-left: 20px;
+      padding: 8px 18px;
+      border-radius: 25px;
+      background: #1a1a1a;
     }
 
     .profile-header a:last-child:hover {
-      background: rgba(255,255,255,0.3);
-      transform: scale(1.05);
+      background: #6c63ff;
+      color: white;
     }
 
-    /* Фото */
+    /* Фото — сдвинуто пониже */
     .photo-container {
       text-align: center;
-      margin-top: -60px;
-      margin-bottom: 20px;
+      margin-top: 20px;
+      margin-bottom: 0;
+      padding: 0 20px;
     }
 
     .photo-container img {
-      width: 150px;
-      height: 150px;
+      width: 130px;
+      height: 130px;
       border-radius: 50%;
-      border: 5px solid white;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      border: 3px solid #6c63ff;
+      box-shadow: 0 0 20px rgba(108,99,255,0.3);
       object-fit: cover;
-      background: white;
-      transition: transform 0.3s;
+      transition: transform 0.3s, box-shadow 0.3s;
     }
 
     .photo-container img:hover {
       transform: scale(1.05);
+      box-shadow: 0 0 30px rgba(108,99,255,0.5);
     }
 
     /* Содержимое профиля */
     .profile-content {
-      padding: 20px 40px 40px;
+      padding: 20px 40px 45px;
     }
 
     .profile-content h1 {
       text-align: center;
-      color: #333;
+      color: #fff;
       font-size: 28px;
-      margin-bottom: 20px;
-      border-bottom: 3px solid #667eea;
-      display: inline-block;
-      width: auto;
-      margin-left: auto;
-      margin-right: auto;
-      display: block;
-      width: fit-content;
-      padding-bottom: 8px;
+      margin: 20px 0 25px;
+      letter-spacing: 1px;
     }
 
+    /* Секция "О себе" */
     .about-me {
-      background: #f8f9fa;
-      padding: 20px;
-      border-radius: 15px;
+      background: #1a1a1a;
+      padding: 22px;
+      border-radius: 20px;
       margin: 20px 0;
-      border-left: 5px solid #667eea;
+      border-left: 4px solid #6c63ff;
     }
 
     .about-me p {
-      color: #555;
-      line-height: 1.6;
-      font-size: 16px;
+      color: #ccc;
+      line-height: 1.7;
+      font-size: 15px;
     }
 
     /* Увлечения */
     .hobbies {
-      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-      padding: 20px;
-      border-radius: 15px;
+      background: #1a1a1a;
+      padding: 22px;
+      border-radius: 20px;
       margin-top: 20px;
     }
 
     .hobbies h2 {
-      color: #333;
-      margin-bottom: 15px;
-      font-size: 22px;
+      color: #6c63ff;
+      margin-bottom: 18px;
+      font-size: 20px;
       display: flex;
       align-items: center;
       gap: 10px;
     }
 
     .hobbies h2::before {
-      content: "⭐";
-      font-size: 24px;
+      content: "✨";
+      font-size: 22px;
     }
 
     .hobbies ul {
@@ -159,33 +163,24 @@
     }
 
     .hobbies li {
-      background: white;
-      padding: 10px 20px;
+      background: #0a0a0a;
+      padding: 8px 18px;
       border-radius: 25px;
-      color: #667eea;
+      color: #ddd;
       font-weight: 500;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      border: 1px solid #333;
       transition: all 0.3s;
     }
 
     .hobbies li:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 5px 15px rgba(102,126,234,0.3);
-      background: #667eea;
+      background: #6c63ff;
       color: white;
-    }
-
-    /* Подвал */
-    .footer {
-      text-align: center;
-      padding: 20px;
-      background: #f8f9fa;
-      color: #888;
-      font-size: 14px;
+      border-color: #6c63ff;
+      transform: translateY(-3px);
     }
 
     /* Адаптивность */
-    @media (max-width: 600px) {
+    @media (max-width: 550px) {
       .profile-content {
         padding: 20px;
       }
@@ -196,10 +191,6 @@
       
       .profile-header a:first-child {
         font-size: 18px;
-      }
-      
-      .profile-header a:last-child {
-        font-size: 14px;
       }
     }
   </style>
@@ -212,6 +203,7 @@
     <a href="index.html">← На главную</a>
   </div>
 
+  <!-- Фото сдвинуто пониже (добавлен отступ сверху) -->
   <div class="photo-container">
     <img src="myfoto.jpg" alt="Моё фото">
   </div>
@@ -234,10 +226,7 @@
       </ul>
     </div>
   </div>
-
-  <div class="footer">
-    <p>© 2026 Жуков Данила | Мой первый красивый профиль</p>
-  </div>
+  <!-- Футер убран полностью -->
 </div>
 
 </body>
